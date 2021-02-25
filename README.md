@@ -1,5 +1,5 @@
 ## React Redux Application
-Simaple project that I built t with Reactjs, Redux, Reduxt-Thunk, Expressjs, Nodejs & MongoDB
+Simple project that I built t with Reactjs, Redux, Redux-Thunk, Expressjs, Nodejs & MongoDB.
  
 
 
