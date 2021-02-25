@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const shortid = require("shortid");
 //Product Schema
 const Schema = mongoose.Schema;
 const ProductSchema = new Schema({
@@ -14,4 +15,5 @@ const ProductSchema = new Schema({
 });
 
 const Product = mongoose.model("Product", ProductSchema);
+
 module.exports = Product;
