@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongodb2020", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
+//
 //Product Model or schema
 // const Product = mongoose.model(
 //   "products",
@@ -109,4 +109,12 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log("Serve started at http://localhost:5000"));
+const server = app.listen(port, () =>
+  console.log("Serve started at http://localhost:5000")
+);
+
+//Show/handle the server error in better way
+process.on("unhandledRejection", (err, promose) => {
+  console.log(`Type of Logged Error: ${err}`);
+  server.close(() => process.exit(1));
+});
