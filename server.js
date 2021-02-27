@@ -114,7 +114,7 @@ const server = app.listen(port, () =>
 );
 
 //Show/handle the server error in better way
-process.on("unhandledRejection", (err, promose) => {
+process.on("unhandledRejection", (err, promise) => {
   console.log(`Type of Logged Error: ${err}`);
   server.close(() => process.exit(1));
 });
