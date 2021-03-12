@@ -115,9 +115,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const port = process.env.PORT || 5050;
+const port = process.env.PORT || 5000;
 const server = app.listen(port, () =>
-  console.log("Serve started at http://localhost:5050")
+  console.log("Serve started at http://localhost:5000")
 );
 
 //Show/handle the server error in better way
