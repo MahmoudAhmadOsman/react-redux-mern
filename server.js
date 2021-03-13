@@ -3,14 +3,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const shortid = require("shortid");
-
+const path = require("path");
 const app = express();
 app.use(bodyParser.json());
 
 
 
 app.use("/", express.static(__dirname + "/build"));
-app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+//app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
 
 
 
@@ -113,6 +113,11 @@ app.use(morgan("tiny"));
 //Check if the connection variable //3
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+  
+  //3/13
+   app.get('*', (req, res) => {
+       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
 }
 
 const port = process.env.PORT || 5000;
